@@ -6,6 +6,7 @@ const computerMove = document.querySelector(".js-moves");
 const resultMove = document.querySelector(".result");
 const playerScore = document.querySelector(".player-score");
 const compScore = document.querySelector(".computer-score");
+const resetBtn = document.querySelector(".reset-score-button");
 const options = ["Rock", "Paper", "Scissors"];
 
 const randomNumber = () => {
@@ -66,4 +67,12 @@ btnScissors.addEventListener("click", () => {
   } else if (compMove === "Scissors") {
     resultMove.textContent = "It a tie";
   }
+});
+
+resetBtn.addEventListener("click", () => {
+  resultMove.textContent = "Not yet a win";
+  playerScore.textContent = 0;
+  compScore.textContent = 0;
+  computerMove.textContent = "";
+  yourMove.textContent = "";
 });
